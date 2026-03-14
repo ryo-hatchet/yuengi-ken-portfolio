@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "spatial-interaction-design",
+    "title": "空間インタラクションデザインの原則 - 身体性とデジタルの接点",
+    "excerpt": "体験型インスタレーションにおける空間設計とインタラクションデザインの基本原則を、遊宴技研の実践事例をもとに考察する。身体の動きとデジタル応答の関係性、遅延の許容範囲、フィードバックループの設計について。",
+    "tags": ["インタラクションデザイン", "空間設計", "UX"],
+    "date": "2025-02-10",
+    "contentPath": "src/content/research/spatial-interaction-design.md"
+  },
+  {
+    "slug": "sensor-fusion-playground",
+    "title": "遊具におけるセンサーフュージョン技術の応用",
+    "excerpt": "複数のセンサー入力を統合して、より自然で直感的な遊具インタラクションを実現するためのセンサーフュージョン技術について解説。LiDAR、深度カメラ、圧力センサーなどの組み合わせパターンと、ノイズ処理の実践的な手法を紹介する。",
+    "tags": ["センサー", "技術解説", "ハードウェア"],
+    "date": "2024-12-05",
+    "contentPath": "src/content/research/sensor-fusion-playground.md"
+  },
+  {
+    "slug": "generative-art-realtime",
+    "title": "リアルタイムジェネラティブアートの最前線",
+    "excerpt": "GPUシェーダーとクリエイティブコーディングを駆使したリアルタイムジェネラティブアートの技術動向。WebGPU時代のブラウザベース表現から、大規模インスタレーション向けの分散レンダリングまでを概観する。",
+    "tags": ["ジェネラティブアート", "GPU", "クリエイティブコーディング"],
+    "date": "2024-09-18",
+    "contentPath": "src/content/research/generative-art-realtime.md"
+  }
+]

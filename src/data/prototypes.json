@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "haptic-floor",
+    "title": "触覚フロア - HAPTIC FLOOR",
+    "description": "床面に埋め込まれた振動アクチュエータにより、歩くだけで様々な触覚フィードバックを得られる次世代型インタラクティブ床。砂浜、草原、水面など異なるテクスチャを足裏で体感できる。",
+    "thumbnail": "/images/prototypes/haptic-floor/thumb.jpg",
+    "images": [
+      "/images/prototypes/haptic-floor/01.jpg"
+    ],
+    "tags": ["触覚", "ハプティクス", "空間体験"],
+    "techStack": ["振動アクチュエータ", "圧力センサー", "ESP32", "Max/MSP"],
+    "status": "進行中",
+    "date": "2025-01-15"
+  },
+  {
+    "slug": "shadow-play",
+    "title": "影遊び - SHADOW PLAY",
+    "description": "影をインタラクションの媒体として使う遊具プロトタイプ。壁に映る影が独自の生命を持ち、ユーザーの影と遊ぶようにインタラクションする。深度カメラによるリアルタイム影検出と生成AIによる影のアニメーション。",
+    "thumbnail": "/images/prototypes/shadow-play/thumb.jpg",
+    "images": [
+      "/images/prototypes/shadow-play/01.jpg",
+      "/images/prototypes/shadow-play/02.jpg"
+    ],
+    "tags": ["影", "AI", "遊具"],
+    "techStack": ["Azure Kinect", "Stable Diffusion", "Python", "プロジェクター"],
+    "status": "完了",
+    "date": "2024-08-20"
+  },
+  {
+    "slug": "scent-navigator",
+    "title": "香りナビゲーター - SCENT NAVIGATOR",
+    "description": "香りで空間をナビゲートする新しいウェイファインディングシステムの構想。視覚や聴覚に頼らず、嗅覚を使った空間認知の可能性を探求する実験的プロジェクト。",
+    "thumbnail": "/images/prototypes/scent-navigator/thumb.jpg",
+    "images": [],
+    "tags": ["嗅覚", "ナビゲーション", "アクセシビリティ"],
+    "techStack": ["アロマディフューザー", "IoT", "空間設計"],
+    "status": "構想",
+    "date": "2025-03-01"
+  }
+]

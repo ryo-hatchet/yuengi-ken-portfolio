@@ -1,0 +1,73 @@
+[
+  {
+    "slug": "hikari-no-utage",
+    "title": "光の宴 - HIKARI NO UTAGE",
+    "description": "来場者の動きに反応して光と音が変化するインタラクティブライトインスタレーション。数百本のLEDチューブが空間を埋め尽くし、人の存在と動作をセンサーで検知して、光の波紋が広がる幻想的な体験を生み出す。2024年の東京デザインウィークで初公開され、1万人以上の来場者を魅了した。",
+    "thumbnail": "/images/works/hikari-no-utage/thumb.jpg",
+    "images": [
+      "/images/works/hikari-no-utage/01.jpg",
+      "/images/works/hikari-no-utage/02.jpg",
+      "/images/works/hikari-no-utage/03.jpg"
+    ],
+    "video": "https://www.youtube.com/watch?v=example1",
+    "tags": ["インスタレーション", "インタラクティブ", "光"],
+    "techStack": ["Arduino", "TouchDesigner", "DMX", "LiDAR"],
+    "links": [
+      { "label": "イベントレポート", "url": "https://example.com/hikari-report" }
+    ],
+    "date": "2024-10-15",
+    "featured": true
+  },
+  {
+    "slug": "koe-no-asobiba",
+    "title": "声の遊び場 - KOE NO ASOBIBA",
+    "description": "子どもたちの声がリアルタイムで視覚的なエフェクトに変換される音声認識遊具。叫ぶ、歌う、囁くなど、声の大きさや高さに応じてプロジェクションマッピングの映像が変化し、声を出すこと自体が遊びになる新しい体験型遊具。全国の児童館やミュージアムでの常設展示を展開中。",
+    "thumbnail": "/images/works/koe-no-asobiba/thumb.jpg",
+    "images": [
+      "/images/works/koe-no-asobiba/01.jpg",
+      "/images/works/koe-no-asobiba/02.jpg"
+    ],
+    "tags": ["遊具", "音声認識", "子ども向け"],
+    "techStack": ["Web Audio API", "p5.js", "Raspberry Pi", "プロジェクションマッピング"],
+    "links": [
+      { "label": "体験レポート", "url": "https://example.com/koe-report" },
+      { "label": "技術解説", "url": "https://example.com/koe-tech" }
+    ],
+    "date": "2024-06-20",
+    "featured": true
+  },
+  {
+    "slug": "matsuri-ar",
+    "title": "祭りAR - MATSURI AR",
+    "description": "日本の伝統的な祭りをAR技術で拡張する体験型フェスティバルシステム。スマートフォンをかざすと山車や神輿にデジタルエフェクトが重なり、伝統と最新技術が融合した新しい祭り体験を提供。地域の文化資産をテクノロジーで再発見するプロジェクト。",
+    "thumbnail": "/images/works/matsuri-ar/thumb.jpg",
+    "images": [
+      "/images/works/matsuri-ar/01.jpg",
+      "/images/works/matsuri-ar/02.jpg",
+      "/images/works/matsuri-ar/03.jpg"
+    ],
+    "video": "https://www.youtube.com/watch?v=example2",
+    "tags": ["AR", "祭り", "文化"],
+    "techStack": ["Unity", "ARKit", "ARCore", "Cloud Anchors"],
+    "links": [
+      { "label": "プロジェクトサイト", "url": "https://example.com/matsuri-ar" }
+    ],
+    "date": "2024-03-01",
+    "featured": false
+  },
+  {
+    "slug": "kaze-no-canvas",
+    "title": "風のキャンバス - KAZE NO CANVAS",
+    "description": "風の強さと方向をセンシングし、巨大なスクリーンに風が描く絵画をリアルタイム生成するアウトドアインスタレーション。自然の見えない力を可視化し、同じ絵は二度と生まれない一期一会のアート体験を実現。各地の芸術祭に招待出展。",
+    "thumbnail": "/images/works/kaze-no-canvas/thumb.jpg",
+    "images": [
+      "/images/works/kaze-no-canvas/01.jpg",
+      "/images/works/kaze-no-canvas/02.jpg"
+    ],
+    "tags": ["インスタレーション", "自然", "ジェネラティブアート"],
+    "techStack": ["openFrameworks", "風速センサー", "大型LEDディスプレイ"],
+    "links": [],
+    "date": "2023-09-10",
+    "featured": true
+  }
+]

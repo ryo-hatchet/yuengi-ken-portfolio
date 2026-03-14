@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +15,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "YUENGI-KEN | Portfolio",
-  description: "遊宴技研ポートフォリオサイト",
+  title: "遊宴技研 | YUENGI-KEN - テクノロジーで遊びと賑わいを開発する",
+  description:
+    "遊宴技研（YUENGI-KEN）は、テクノロジーで遊びと賑わいを開発する活動体です。体験型インスタレーション、テクノロジー遊具の発明、宴の場の体験設計を通じて、人が集まって遊ぶことの可能性を拡張します。",
+  openGraph: {
+    title: "遊宴技研 | YUENGI-KEN - テクノロジーで遊びと賑わいを開発する",
+    description:
+      "テクノロジーで遊びと賑わいを開発する活動体。体験型インスタレーション、テクノロジー遊具の発明、宴の場の体験設計。",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +36,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+        <main className="pt-16">{children}</main>
+        <Footer />
       </body>
     </html>
   );
