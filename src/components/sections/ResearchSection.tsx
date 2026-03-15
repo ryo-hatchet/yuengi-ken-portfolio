@@ -8,11 +8,11 @@ export default function ResearchSection() {
     .slice(0, 3);
 
   return (
-    <section id="research" className="py-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+    <section id="research" className="py-24 sm:py-32 bg-bg-card">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeader title="Research" subtitle="研究と発信" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {articles.map((article) => (
             <ResearchCard key={article.slug} article={article} />
           ))}

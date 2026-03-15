@@ -1,16 +1,30 @@
 import fs from "fs";
 import path from "path";
 
-import type { Work, Prototype, ResearchArticle } from "@/types";
+import type { Work, Invention, ResearchArticle } from "@/types";
 
-import worksData from "@/data/works.json";
-import prototypesData from "@/data/prototypes.json";
-import researchData from "@/data/research.json";
+const dataDir = path.join(process.cwd(), "public", "data");
+
+function readJsonFilesFromDir<T>(dir: string, filename: string): T[] {
+  const fullDir = path.join(dataDir, dir);
+  if (!fs.existsSync(fullDir)) return [];
+
+  return fs
+    .readdirSync(fullDir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => {
+      const filePath = path.join(fullDir, entry.name, filename);
+      if (!fs.existsSync(filePath)) return null;
+      const content = fs.readFileSync(filePath, "utf-8");
+      return JSON.parse(content) as T;
+    })
+    .filter((item): item is T => item !== null);
+}
 
 // --- Works ---
 
 export function getWorks(): Work[] {
-  return worksData as Work[];
+  return readJsonFilesFromDir<Work>("works", "work.json");
 }
 
 export function getFeaturedWorks(): Work[] {
@@ -21,20 +35,20 @@ export function getWorkBySlug(slug: string): Work | undefined {
   return getWorks().find((work) => work.slug === slug);
 }
 
-// --- Prototypes ---
+// --- Inventions ---
 
-export function getPrototypes(): Prototype[] {
-  return prototypesData as Prototype[];
+export function getInventions(): Invention[] {
+  return readJsonFilesFromDir<Invention>("inventions", "invention.json");
 }
 
-export function getPrototypeBySlug(slug: string): Prototype | undefined {
-  return getPrototypes().find((prototype) => prototype.slug === slug);
+export function getInventionBySlug(slug: string): Invention | undefined {
+  return getInventions().find((invention) => invention.slug === slug);
 }
 
 // --- Research Articles ---
 
 export function getResearchArticles(): ResearchArticle[] {
-  return researchData as ResearchArticle[];
+  return readJsonFilesFromDir<ResearchArticle>("research", "research.json");
 }
 
 export function getResearchArticleBySlug(

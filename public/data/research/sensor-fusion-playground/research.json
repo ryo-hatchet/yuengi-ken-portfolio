@@ -1,0 +1,8 @@
+{
+  "slug": "sensor-fusion-playground",
+  "title": "遊具におけるセンサーフュージョン技術の応用",
+  "excerpt": "複数のセンサー入力を統合して、より自然で直感的な遊具インタラクションを実現するためのセンサーフュージョン技術について解説。LiDAR、深度カメラ、圧力センサーなどの組み合わせパターンと、ノイズ処理の実践的な手法を紹介する。",
+  "tags": ["センサー", "技術解説", "ハードウェア"],
+  "date": "2024-12-05",
+  "contentPath": "public/data/research/sensor-fusion-playground/content.md"
+}

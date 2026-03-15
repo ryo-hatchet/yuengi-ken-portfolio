@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { getWorks, getWorkBySlug } from "@/lib/data";
 
@@ -41,15 +42,29 @@ export default async function WorkDetailPage({ params }: Props) {
           &larr; Worksに戻る
         </Link>
 
-        {/* ヒーロー画像エリア */}
-        <div className="bg-text-sub/10 h-80 rounded-lg flex items-center justify-center mb-8">
-          <span className="text-6xl text-text-sub/30">遊</span>
+        {/* ヒーロー画像 */}
+        <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-8">
+          <Image
+            src={work.thumbnail}
+            alt={work.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 896px"
+            className="object-cover"
+            priority
+          />
         </div>
 
         {/* タイトル */}
         <h1 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
           {work.title}
         </h1>
+
+        {/* タグライン */}
+        {work.tagline && (
+          <p className="text-lg italic text-accent/80 mb-4 leading-relaxed">
+            {work.tagline}
+          </p>
+        )}
 
         {/* 日付 */}
         <p className="text-text-sub mb-4">{work.date}</p>
@@ -68,6 +83,28 @@ export default async function WorkDetailPage({ params }: Props) {
 
         {/* 説明文 */}
         <p className="text-text-main leading-relaxed mb-8">{work.description}</p>
+
+        {/* ギャラリー */}
+        {work.images && work.images.length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-lg font-bold text-text-heading mb-3">
+              ギャラリー
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {work.images.map((img, i) => (
+                <div key={img} className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <Image
+                    src={img}
+                    alt={`${work.title} - ${i + 1}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 448px"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* 技術スタック */}
         {work.techStack.length > 0 && (

@@ -1,0 +1,18 @@
+{
+  "slug": "bottloop-factory",
+  "title": "ボトループファクトリー",
+  "tagline": "捨てるを遊びに、リサイクルをゲームに変える工場",
+  "description": "日本コカ・コーラとのコラボレーションで制作した、PETボトルの「ボトル to ボトル」リサイクルを楽しく学べる体験型ゲームマシン。分別したPETボトルをコイン代わりに投入し、100%リサイクルPETに生まれ変わるプロセスをゲーム形式で体験できる。オリジナルキャラクター「ルーペッツ」が工場を案内する。TBS「地球を笑顔にする広場」赤坂サカス会場にて展示。",
+  "thumbnail": "/data/works/bottloop-factory/thumb.jpg",
+  "images": [
+    "/data/works/bottloop-factory/01.png"
+  ],
+  "tags": ["ゲーム", "サステナビリティ", "体験型"],
+  "techStack": ["ゲームマシン設計", "機構設計", "UI/UXデザイン"],
+  "links": [
+    { "label": "Coca-Cola公式", "url": "https://www.coca-cola.com/jp/ja/environment/activities/bottloop-factory" }
+  ],
+  "year": 2024,
+  "date": "2024-05-03",
+  "featured": true
+}

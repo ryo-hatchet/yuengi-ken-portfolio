@@ -1,0 +1,21 @@
+{
+  "slug": "neo-tukidekurasuten",
+  "title": "NEO月でくらす展",
+  "tagline": "光が呼吸する空間で、あなたの存在が波紋になる",
+  "description": "来場者の動きに反応して光と音が変化するインタラクティブライトインスタレーション。数百本のLEDチューブが空間を埋め尽くし、人の存在と動作をセンサーで検知して、光の波紋が広がる幻想的な体験を生み出す。2024年の東京デザインウィークで初公開され、1万人以上の来場者を魅了した。",
+  "thumbnail": "/data/works/neo-tukidekurasuten/thumb.jpg",
+  "images": [
+    "/data/works/neo-tukidekurasuten/01.jpg",
+    "/data/works/neo-tukidekurasuten/02.jpg",
+    "/data/works/neo-tukidekurasuten/03.jpg"
+  ],
+  "video": "https://www.youtube.com/watch?v=example1",
+  "tags": ["インスタレーション", "インタラクティブ", "光"],
+  "techStack": ["Arduino", "TouchDesigner", "DMX", "LiDAR"],
+  "links": [
+    { "label": "イベントレポート", "url": "https://example.com/hikari-report" }
+  ],
+  "year": 2024,
+  "date": "2024-10-15",
+  "featured": true
+}

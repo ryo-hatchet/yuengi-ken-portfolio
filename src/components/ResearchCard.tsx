@@ -8,25 +8,27 @@ type ResearchCardProps = {
 export default function ResearchCard({ article }: ResearchCardProps) {
   return (
     <Link href={`/research/${article.slug}`} className="group block">
-      <div className="bg-bg-card rounded-lg p-6 border border-bg-main hover:shadow-lg hover:scale-[1.02] transition-all duration-300 h-full">
-        <time className="text-xs text-text-sub">{article.date}</time>
-        <h3 className="font-bold text-text-heading group-hover:text-accent transition-colors mt-2 mb-3">
+      <article className="border border-metallic/30 hover:border-accent/30 p-6 transition-all duration-500 hover:shadow-xl bg-bg-card h-full flex flex-col">
+        <time className="text-[10px] font-mono tracking-wider text-text-sub">
+          {article.date}
+        </time>
+        <h3 className="font-bold text-text-heading group-hover:text-accent transition-colors duration-300 mt-3 mb-3 text-[15px] leading-snug flex-1">
           {article.title}
         </h3>
-        <p className="text-sm text-text-sub line-clamp-3 mb-4">
+        <p className="text-sm text-text-sub line-clamp-3 leading-relaxed mb-4">
           {article.excerpt}
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-auto">
           {article.tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs bg-bg-main text-text-sub px-2 py-1 rounded"
+              className="text-[10px] font-mono tracking-wider text-text-sub"
             >
-              {tag}
+              #{tag}
             </span>
           ))}
         </div>
-      </div>
+      </article>
     </Link>
   );
 }

@@ -1,0 +1,15 @@
+{
+  "slug": "shadow-play",
+  "title": "影遊び - SHADOW PLAY",
+  "description": "影をインタラクションの媒体として使う遊具プロトタイプ。壁に映る影が独自の生命を持ち、ユーザーの影と遊ぶようにインタラクションする。深度カメラによるリアルタイム影検出と生成AIによる影のアニメーション。",
+  "thumbnail": "/data/inventions/shadow-play/thumb.jpg",
+  "images": [
+    "/data/inventions/shadow-play/01.jpg",
+    "/data/inventions/shadow-play/02.jpg"
+  ],
+  "tags": ["影", "AI", "遊具"],
+  "techStack": ["Azure Kinect", "Stable Diffusion", "Python", "プロジェクター"],
+  "status": "完了",
+  "year": 2024,
+  "date": "2024-08-20"
+}

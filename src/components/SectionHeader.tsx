@@ -5,13 +5,16 @@ type SectionHeaderProps = {
 
 export default function SectionHeader({ title, subtitle }: SectionHeaderProps) {
   return (
-    <div className="border-l-4 border-accent pl-4 mb-8">
-      <h2 className="text-2xl sm:text-3xl font-bold text-text-heading">
+    <div className="mb-12">
+      <div className="flex items-center gap-4 mb-3">
+        <div className="w-8 h-0.5 bg-accent" />
+        <span className="text-[10px] font-mono tracking-[0.3em] text-text-sub uppercase">
+          {subtitle}
+        </span>
+      </div>
+      <h2 className="text-3xl sm:text-4xl font-black text-text-heading tracking-tight">
         {title}
       </h2>
-      {subtitle && (
-        <p className="mt-1 text-text-sub text-sm sm:text-base">{subtitle}</p>
-      )}
     </div>
   );
 }

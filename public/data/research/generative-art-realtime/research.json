@@ -1,0 +1,8 @@
+{
+  "slug": "generative-art-realtime",
+  "title": "リアルタイムジェネラティブアートの最前線",
+  "excerpt": "GPUシェーダーとクリエイティブコーディングを駆使したリアルタイムジェネラティブアートの技術動向。WebGPU時代のブラウザベース表現から、大規模インスタレーション向けの分散レンダリングまでを概観する。",
+  "tags": ["ジェネラティブアート", "GPU", "クリエイティブコーディング"],
+  "date": "2024-09-18",
+  "contentPath": "public/data/research/generative-art-realtime/content.md"
+}

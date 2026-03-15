@@ -2,32 +2,36 @@
 
 :root {
   --color-accent: #FF5722;
+  --color-accent-dark: #E64A19;
   --color-bg-main: #F0EDEA;
   --color-bg-card: #FAF8F6;
+  --color-bg-dark: #1A1A1A;
   --color-text-sub: #B0A99F;
   --color-text-main: #2D2D2D;
   --color-text-heading: #1A1A1A;
+  --color-metallic: #C8C2BA;
+  --color-metallic-dark: #8A8279;
 }
 
 @theme inline {
   --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
   --color-bg-main: var(--color-bg-main);
   --color-bg-card: var(--color-bg-card);
+  --color-bg-dark: var(--color-bg-dark);
   --color-text-sub: var(--color-text-sub);
   --color-text-main: var(--color-text-main);
   --color-text-heading: var(--color-text-heading);
+  --color-metallic: var(--color-metallic);
+  --color-metallic-dark: var(--color-metallic-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --animate-scroll: scroll 30s linear infinite;
+  --animate-scroll: scroll 40s linear infinite;
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 html {
@@ -37,5 +41,39 @@ html {
 body {
   background: var(--color-bg-main);
   color: var(--color-text-main);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3D Conveyor */
+.conveyor-perspective {
+  perspective: 1000px;
+  perspective-origin: 50% 20%;
+}
+
+.conveyor-3d {
+  transform: rotateX(28deg) rotateZ(-1deg);
+  transform-style: preserve-3d;
+}
+
+.conveyor-surface {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 28px,
+      rgba(0,0,0,0.04) 28px,
+      rgba(0,0,0,0.04) 30px
+    );
+}
+
+.rail-metallic {
+  background: linear-gradient(180deg, #D4CFC8 0%, #A8A29E 40%, #8A8279 60%, #D4CFC8 100%);
+}
+
+.stamp-border {
+  border: 2px solid var(--color-metallic-dark);
+  box-shadow:
+    inset 0 0 0 3px var(--color-bg-card),
+    inset 0 0 0 4px var(--color-metallic);
 }

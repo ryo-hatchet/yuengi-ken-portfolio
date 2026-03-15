@@ -7,11 +7,11 @@ export default function WorksSection() {
   const works = getFeaturedWorks();
 
   return (
-    <section id="works" className="py-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+    <section id="works" className="py-24 sm:py-32 bg-bg-card">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeader title="Works" subtitle="制作実績" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {works.map((work) => (
             <WorkCard key={work.slug} work={work} />
           ))}
@@ -20,9 +20,10 @@ export default function WorksSection() {
         <div className="text-right">
           <Link
             href="/works"
-            className="text-accent hover:underline font-medium inline-block transition-transform duration-200 hover:translate-x-1"
+            className="inline-flex items-center gap-2 text-sm font-mono tracking-wider text-accent hover:gap-4 transition-all duration-300"
           >
-            すべてのWorksを見る &rarr;
+            すべてのWorksを見る
+            <span className="text-lg">→</span>
           </Link>
         </div>
       </div>

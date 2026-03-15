@@ -1,0 +1,20 @@
+{
+  "slug": "expo-nomo-zone4",
+  "title": "大阪・関西万博「ノモの国」ZONE4 - 大空へ",
+  "tagline": "あなたのチョウが、360度の空を舞い上がる",
+  "description": "大阪・関西万博パナソニックパビリオン「ノモの国」のZONE4「大空へ」。21台の高輝度プロジェクターによる360度没入型シアター空間。体験者が台座に結晶を置き、葉っぱで風を起こすと、自分だけのチョウが舞い上がり他のチョウと音を奏で合う。天井5カ所からボルテックスリングで直径約1.3mのミスト渦輪が降り注ぐクライマックス演出を実現。パナソニック独自の超微細ミスト「シルキーファインミスト」を活用した滝のスクリーン演出も見どころ。",
+  "thumbnail": "/data/works/expo-nomo-zone4/thumb.jpg",
+  "images": [
+    "/data/works/expo-nomo-zone4/01.jpg",
+    "/data/works/expo-nomo-zone4/02.jpg",
+    "/data/works/expo-nomo-zone4/03.jpg"
+  ],
+  "tags": ["万博", "没入型体験", "インタラクティブ"],
+  "techStack": ["高輝度プロジェクター×21台", "ボルテックスリング", "シルキーファインミスト", "センサー", "映像演出"],
+  "links": [
+    { "label": "ITmedia記事", "url": "https://www.itmedia.co.jp/pcuser/articles/2505/02/news079_3.html" }
+  ],
+  "year": 2025,
+  "date": "2025-04-13",
+  "featured": true
+}

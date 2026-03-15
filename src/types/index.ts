@@ -1,6 +1,7 @@
 export type Work = {
   slug: string;
   title: string;
+  tagline?: string;
   description: string;
   thumbnail: string;
   images: string[];
@@ -8,11 +9,12 @@ export type Work = {
   tags: string[];
   techStack: string[];
   links: { label: string; url: string }[];
+  year: number;
   date: string;
   featured: boolean;
 };
 
-export type Prototype = {
+export type Invention = {
   slug: string;
   title: string;
   description: string;
@@ -21,6 +23,7 @@ export type Prototype = {
   tags: string[];
   techStack: string[];
   status: "進行中" | "完了" | "構想";
+  year: number;
   date: string;
 };
 

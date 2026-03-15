@@ -1,0 +1,14 @@
+{
+  "slug": "haptic-floor",
+  "title": "触覚フロア - HAPTIC FLOOR",
+  "description": "床面に埋め込まれた振動アクチュエータにより、歩くだけで様々な触覚フィードバックを得られる次世代型インタラクティブ床。砂浜、草原、水面など異なるテクスチャを足裏で体感できる。",
+  "thumbnail": "/data/inventions/haptic-floor/thumb.jpg",
+  "images": [
+    "/data/inventions/haptic-floor/01.jpg"
+  ],
+  "tags": ["触覚", "ハプティクス", "空間体験"],
+  "techStack": ["振動アクチュエータ", "圧力センサー", "ESP32", "Max/MSP"],
+  "status": "進行中",
+  "year": 2025,
+  "date": "2025-01-15"
+}
