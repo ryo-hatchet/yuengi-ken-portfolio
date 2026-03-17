@@ -6,11 +6,13 @@ import * as THREE from "three";
 
 // Camera positions to cycle through
 const CAMERA_POSES = [
-  { position: [10, 7, 10], lookAt: [0, 0.5, 0] },    // Classic isometric
-  { position: [14, 4, 6], lookAt: [-2, 0.8, 0] },     // Low angle side
-  { position: [0, 10, 12], lookAt: [0, 0, 0] },       // Top-down angled
-  { position: [-8, 5, 10], lookAt: [2, 0.5, 0] },     // Opposite side
-  { position: [6, 3, 14], lookAt: [0, 1, 0] },        // Close front
+  { position: [10, 7, 10], lookAt: [0, 0.5, 0] },      // Classic isometric
+  { position: [16, 1.2, 0], lookAt: [-4, 0.8, 0] },    // Horizontal side view
+  { position: [14, 4, 6], lookAt: [-2, 0.8, 0] },      // Low angle side
+  { position: [0, 10, 12], lookAt: [0, 0, 0] },        // Top-down angled
+  { position: [0, 1.5, 16], lookAt: [0, 0.8, 0] },     // Horizontal front view
+  { position: [-8, 5, 10], lookAt: [2, 0.5, 0] },      // Opposite side
+  { position: [6, 3, 14], lookAt: [0, 1, 0] },         // Close front
 ] as const;
 
 const TRANSITION_DURATION = 3.0; // seconds for smooth transition

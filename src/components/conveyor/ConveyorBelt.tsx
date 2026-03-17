@@ -1,57 +1,96 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 const BELT_WIDTH = 4.0;
 const BELT_LENGTH = 30;
 const RAIL_HEIGHT = 0.15;
-const ROLLER_COUNT = 16;
-const ROLLER_RADIUS = 0.12;
+const ROLLER_COUNT = 20;
+const ROLLER_RADIUS = 0.22;
+const BELT_SPEED = 0.175; // Match box speed
 
 export default function ConveyorBelt() {
-  const beltRef = useRef<THREE.Mesh>(null);
   const rollerRefs = useRef<THREE.Mesh[]>([]);
+  const stripeRefs = useRef<THREE.Mesh[]>([]);
+  const stripeCount = 60;
+  const stripeSpacing = BELT_LENGTH / stripeCount;
+
+  // Create roller texture with grooves
+  const rollerMaterial = useMemo(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 128;
+    canvas.height = 32;
+    const ctx = canvas.getContext("2d")!;
+    // Base metallic color
+    ctx.fillStyle = "#8a8279";
+    ctx.fillRect(0, 0, 128, 32);
+    // Grooves
+    for (let i = 0; i < 32; i += 4) {
+      ctx.fillStyle = i % 8 === 0 ? "#6a6259" : "#9a9490";
+      ctx.fillRect(0, i, 128, 2);
+    }
+    const tex = new THREE.CanvasTexture(canvas);
+    tex.wrapS = THREE.RepeatWrapping;
+    tex.wrapT = THREE.RepeatWrapping;
+    tex.repeat.set(1, 3);
+    return new THREE.MeshStandardMaterial({
+      map: tex,
+      roughness: 0.3,
+      metalness: 0.85,
+    });
+  }, []);
 
   useFrame((_, delta) => {
-    // Animate belt texture offset
-    if (beltRef.current) {
-      const mat = beltRef.current.material as THREE.MeshStandardMaterial;
-      if (mat.map) {
-        mat.map.offset.x -= delta * 0.3;
-      }
-    }
-    // Rotate rollers
+    const dx = BELT_SPEED * delta * 60;
+
+    // Rotate rollers visibly
     rollerRefs.current.forEach((roller) => {
-      if (roller) roller.rotation.z -= delta * 3;
+      if (roller) {
+        // rotation.z for cylinder rotated along X axis = visible spin
+        roller.rotation.y += (dx / ROLLER_RADIUS) * 0.06;
+      }
+    });
+
+    // Move belt stripes to simulate belt surface movement
+    stripeRefs.current.forEach((stripe) => {
+      if (!stripe) return;
+      stripe.position.x -= dx;
+      // Wrap around
+      if (stripe.position.x < -BELT_LENGTH / 2) {
+        stripe.position.x += BELT_LENGTH;
+      }
     });
   });
 
   return (
     <group>
-      {/* Belt surface */}
-      <mesh ref={beltRef} position={[0, 0, 0]} receiveShadow>
-        <boxGeometry args={[BELT_LENGTH, 0.05, BELT_WIDTH]} />
+      {/* Belt surface - dark rubber */}
+      <mesh position={[0, 0, 0]} receiveShadow>
+        <boxGeometry args={[BELT_LENGTH, 0.06, BELT_WIDTH]} />
         <meshStandardMaterial
-          color="#3a3a3a"
-          roughness={0.85}
-          metalness={0.1}
+          color="#2a2a2a"
+          roughness={0.9}
+          metalness={0.05}
         />
       </mesh>
 
-      {/* Belt stripes - subtle pattern */}
-      {Array.from({ length: 40 }).map((_, i) => (
+      {/* Moving belt stripes - these animate to show belt motion */}
+      {Array.from({ length: stripeCount }).map((_, i) => (
         <mesh
           key={`stripe-${i}`}
-          position={[i * 0.75 - 15, 0.026, 0]}
+          ref={(el) => {
+            if (el) stripeRefs.current[i] = el;
+          }}
+          position={[i * stripeSpacing - BELT_LENGTH / 2, 0.032, 0]}
           receiveShadow
         >
-          <boxGeometry args={[0.08, 0.001, BELT_WIDTH - 0.2]} />
+          <boxGeometry args={[0.06, 0.002, BELT_WIDTH - 0.3]} />
           <meshStandardMaterial
             color="#4a4a4a"
             roughness={0.7}
-            metalness={0.15}
+            metalness={0.1}
           />
         </mesh>
       ))}
@@ -76,67 +115,81 @@ export default function ConveyorBelt() {
         />
       </mesh>
 
-      {/* Side panels - industrial look */}
-      <mesh position={[0, -0.15, -BELT_WIDTH / 2 - 0.2]} castShadow>
+      {/* Side panels */}
+      <mesh position={[0, -0.12, -BELT_WIDTH / 2 - 0.2]} castShadow>
         <boxGeometry args={[BELT_LENGTH, 0.35, 0.04]} />
-        <meshStandardMaterial
-          color="#2a2a2a"
-          roughness={0.4}
-          metalness={0.7}
-        />
+        <meshStandardMaterial color="#2a2a2a" roughness={0.4} metalness={0.7} />
       </mesh>
-      <mesh position={[0, -0.15, BELT_WIDTH / 2 + 0.2]} castShadow>
+      <mesh position={[0, -0.12, BELT_WIDTH / 2 + 0.2]} castShadow>
         <boxGeometry args={[BELT_LENGTH, 0.35, 0.04]} />
-        <meshStandardMaterial
-          color="#2a2a2a"
-          roughness={0.4}
-          metalness={0.7}
-        />
+        <meshStandardMaterial color="#2a2a2a" roughness={0.4} metalness={0.7} />
       </mesh>
 
-      {/* Rollers */}
+      {/* Rollers - larger and visible between side panels */}
       {Array.from({ length: ROLLER_COUNT }).map((_, i) => {
         const x =
-          (i / (ROLLER_COUNT - 1)) * (BELT_LENGTH - 2) - (BELT_LENGTH - 2) / 2;
+          (i / (ROLLER_COUNT - 1)) * (BELT_LENGTH - 1.5) -
+          (BELT_LENGTH - 1.5) / 2;
         return (
           <mesh
             key={`roller-${i}`}
             ref={(el) => {
               if (el) rollerRefs.current[i] = el;
             }}
-            position={[x, -0.08, 0]}
+            position={[x, -0.1, 0]}
             rotation={[Math.PI / 2, 0, 0]}
             castShadow
+            material={rollerMaterial}
           >
             <cylinderGeometry
-              args={[ROLLER_RADIUS, ROLLER_RADIUS, BELT_WIDTH + 0.1, 12]}
-            />
-            <meshStandardMaterial
-              color="#9a9490"
-              roughness={0.3}
-              metalness={0.85}
+              args={[ROLLER_RADIUS, ROLLER_RADIUS, BELT_WIDTH + 0.3, 16]}
             />
           </mesh>
         );
       })}
 
+      {/* Roller end caps - visible chrome ends sticking out */}
+      {Array.from({ length: ROLLER_COUNT }).map((_, i) => {
+        const x =
+          (i / (ROLLER_COUNT - 1)) * (BELT_LENGTH - 1.5) -
+          (BELT_LENGTH - 1.5) / 2;
+        return [
+          <mesh
+            key={`cap-l-${i}`}
+            position={[x, -0.1, -BELT_WIDTH / 2 - 0.22]}
+            rotation={[Math.PI / 2, 0, 0]}
+          >
+            <cylinderGeometry args={[ROLLER_RADIUS * 0.6, ROLLER_RADIUS * 0.6, 0.08, 8]} />
+            <meshStandardMaterial color="#c0b8b0" roughness={0.15} metalness={0.95} />
+          </mesh>,
+          <mesh
+            key={`cap-r-${i}`}
+            position={[x, -0.1, BELT_WIDTH / 2 + 0.22]}
+            rotation={[Math.PI / 2, 0, 0]}
+          >
+            <cylinderGeometry args={[ROLLER_RADIUS * 0.6, ROLLER_RADIUS * 0.6, 0.08, 8]} />
+            <meshStandardMaterial color="#c0b8b0" roughness={0.15} metalness={0.95} />
+          </mesh>,
+        ];
+      })}
+
       {/* Support legs */}
       {[-10, -3.3, 3.3, 10].map((x) =>
         [-BELT_WIDTH / 2 - 0.2, BELT_WIDTH / 2 + 0.2].map((z) => (
-          <mesh
-            key={`leg-${x}-${z}`}
-            position={[x, -0.6, z]}
-            castShadow
-          >
+          <mesh key={`leg-${x}-${z}`} position={[x, -0.6, z]} castShadow>
             <boxGeometry args={[0.1, 0.9, 0.08]} />
-            <meshStandardMaterial
-              color="#2a2a2a"
-              roughness={0.5}
-              metalness={0.6}
-            />
+            <meshStandardMaterial color="#2a2a2a" roughness={0.5} metalness={0.6} />
           </mesh>
         ))
       )}
+
+      {/* Cross braces between legs */}
+      {[-10, -3.3, 3.3, 10].map((x) => (
+        <mesh key={`brace-${x}`} position={[x, -0.85, 0]} castShadow>
+          <boxGeometry args={[0.06, 0.06, BELT_WIDTH + 0.4]} />
+          <meshStandardMaterial color="#3a3a3a" roughness={0.5} metalness={0.6} />
+        </mesh>
+      ))}
 
       {/* Ground plane for shadows */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.05, 0]} receiveShadow>

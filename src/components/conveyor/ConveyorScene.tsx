@@ -21,7 +21,7 @@ type ConveyorSceneProps = {
 export default function ConveyorScene({ works }: ConveyorSceneProps) {
   const { setRef, getInitialX, hoveredIndex } = useConveyorAnimation({
     count: works.length,
-    speed: 0.25,
+    speed: 0.175,
     spacing: 3.5,
   });
 
