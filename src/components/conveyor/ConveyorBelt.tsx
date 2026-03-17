@@ -115,17 +115,23 @@ export default function ConveyorBelt() {
         />
       </mesh>
 
-      {/* Side panels */}
-      <mesh position={[0, -0.12, -BELT_WIDTH / 2 - 0.2]} castShadow>
-        <boxGeometry args={[BELT_LENGTH, 0.35, 0.04]} />
+      {/* Belt underside - covers rollers from below */}
+      <mesh position={[0, -0.32, 0]} receiveShadow>
+        <boxGeometry args={[BELT_LENGTH, 0.04, BELT_WIDTH]} />
+        <meshStandardMaterial color="#1a1a1a" roughness={0.9} metalness={0.05} />
+      </mesh>
+
+      {/* Side panels - tall enough to fully enclose rollers */}
+      <mesh position={[0, -0.15, -BELT_WIDTH / 2 - 0.02]} castShadow>
+        <boxGeometry args={[BELT_LENGTH, 0.38, 0.06]} />
         <meshStandardMaterial color="#2a2a2a" roughness={0.4} metalness={0.7} />
       </mesh>
-      <mesh position={[0, -0.12, BELT_WIDTH / 2 + 0.2]} castShadow>
-        <boxGeometry args={[BELT_LENGTH, 0.35, 0.04]} />
+      <mesh position={[0, -0.15, BELT_WIDTH / 2 + 0.02]} castShadow>
+        <boxGeometry args={[BELT_LENGTH, 0.38, 0.06]} />
         <meshStandardMaterial color="#2a2a2a" roughness={0.4} metalness={0.7} />
       </mesh>
 
-      {/* Rollers - larger and visible between side panels */}
+      {/* Rollers - hidden inside the belt housing, still animate for mechanical feel */}
       {Array.from({ length: ROLLER_COUNT }).map((_, i) => {
         const x =
           (i / (ROLLER_COUNT - 1)) * (BELT_LENGTH - 1.5) -
@@ -136,42 +142,29 @@ export default function ConveyorBelt() {
             ref={(el) => {
               if (el) rollerRefs.current[i] = el;
             }}
-            position={[x, -0.1, 0]}
+            position={[x, -0.16, 0]}
             rotation={[Math.PI / 2, 0, 0]}
-            castShadow
             material={rollerMaterial}
           >
             <cylinderGeometry
-              args={[ROLLER_RADIUS, ROLLER_RADIUS, BELT_WIDTH + 0.3, 16]}
+              args={[ROLLER_RADIUS, ROLLER_RADIUS, BELT_WIDTH - 0.1, 16]}
             />
           </mesh>
         );
       })}
 
-      {/* Roller end caps - visible chrome ends sticking out */}
-      {Array.from({ length: ROLLER_COUNT }).map((_, i) => {
-        const x =
-          (i / (ROLLER_COUNT - 1)) * (BELT_LENGTH - 1.5) -
-          (BELT_LENGTH - 1.5) / 2;
-        return [
-          <mesh
-            key={`cap-l-${i}`}
-            position={[x, -0.1, -BELT_WIDTH / 2 - 0.22]}
-            rotation={[Math.PI / 2, 0, 0]}
-          >
-            <cylinderGeometry args={[ROLLER_RADIUS * 0.6, ROLLER_RADIUS * 0.6, 0.08, 8]} />
-            <meshStandardMaterial color="#c0b8b0" roughness={0.15} metalness={0.95} />
-          </mesh>,
-          <mesh
-            key={`cap-r-${i}`}
-            position={[x, -0.1, BELT_WIDTH / 2 + 0.22]}
-            rotation={[Math.PI / 2, 0, 0]}
-          >
-            <cylinderGeometry args={[ROLLER_RADIUS * 0.6, ROLLER_RADIUS * 0.6, 0.08, 8]} />
-            <meshStandardMaterial color="#c0b8b0" roughness={0.15} metalness={0.95} />
-          </mesh>,
-        ];
-      })}
+      {/* End drums - visible at both ends of the conveyor */}
+      {[-(BELT_LENGTH / 2 - 0.15), BELT_LENGTH / 2 - 0.15].map((x, idx) => (
+        <mesh
+          key={`drum-${idx}`}
+          position={[x, -0.15, 0]}
+          rotation={[Math.PI / 2, 0, 0]}
+          castShadow
+        >
+          <cylinderGeometry args={[0.18, 0.18, BELT_WIDTH + 0.08, 20]} />
+          <meshStandardMaterial color="#7a7270" roughness={0.25} metalness={0.9} />
+        </mesh>
+      ))}
 
       {/* Support legs */}
       {[-10, -3.3, 3.3, 10].map((x) =>
