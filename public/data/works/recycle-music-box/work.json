@@ -5,9 +5,11 @@
   "description": "音楽フェスCoca-Cola X Fes 2025で展示されたターンテーブル型リサイクルボックス。来場者が飲み終えたPETボトルを回転するターンテーブルの投入口に入れると、4つの投入口がそれぞれ「Vocal」「Keyboard」「Bass」「Special」の音をトリガーし、参加者のリサイクル行動に応じてダイナミックな音楽が生まれる。2日間で1,600人以上が参加し、800本以上のボトルがリサイクルされた。",
   "thumbnail": "/data/works/recycle-music-box/thumb.jpg",
   "images": [
-    "/data/works/recycle-music-box/01.png",
-    "/data/works/recycle-music-box/02.png",
-    "/data/works/recycle-music-box/03.png"
+    "/data/works/recycle-music-box/01.jpg",
+    "/data/works/recycle-music-box/02.jpg",
+    "/data/works/recycle-music-box/03.jpg",
+    "/data/works/recycle-music-box/04.jpg",
+    "/data/works/recycle-music-box/05.jpg"
   ],
   "tags": ["インタラクティブ", "音楽", "サステナビリティ"],
   "techStack": ["センサー", "サウンドデザイン", "ターンテーブル機構", "プロジェクション"],

@@ -1,0 +1,18 @@
+{
+  "slug": "shiawase-pon-camera",
+  "title": "しあわせ、ぽん！カメラ",
+  "tagline": "AIが「しあわせの瞬間」を見つけて、シャッターを切る",
+  "description": "ミツカンの「しあわせ、ぽん！」プロジェクト第5弾として開発したAIカメラのプロトタイプ。味ぽんが58年間食卓から見つめてきた「日常のしあわせ」を可視化するために、表情認識AIを搭載。複数人の笑顔の値をリアルタイムで解析し、独自のアルゴリズムで「しあわせの瞬間」を判定して自動でシャッターを切る。撮影した写真はWi-FiでPCに自動転送され、専用アプリでスマートフォンからも閲覧可能。「しあわせの瞬間」をアルゴリズムでどう定義するかという技術的チャレンジに対し、繰り返しの検証と表情データの分析を重ねて実現した。",
+  "thumbnail": "/data/works/shiawase-pon-camera/thumb.jpg",
+  "images": [
+    "/data/works/shiawase-pon-camera/01.png"
+  ],
+  "tags": ["AI", "プロトタイプ", "カメラ"],
+  "techStack": ["表情認識AI", "笑顔値解析", "Wi-Fi自動転送", "専用アプリ"],
+  "links": [
+    { "label": "ミツカン公式", "url": "https://www.mizkan.co.jp/company/news/detail/221124-70.html" }
+  ],
+  "year": 2022,
+  "date": "2022-11-30",
+  "featured": true
+}

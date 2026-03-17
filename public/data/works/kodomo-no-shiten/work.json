@@ -1,0 +1,20 @@
+{
+  "slug": "kodomo-no-shiten",
+  "title": "こどもの視展",
+  "tagline": "大人が「こどもの目線」を体験する、視点逆転の展覧会",
+  "description": "ITOCHU SDGs STUDIOで開催された、大人がこどもの視点を体験できる展覧会。代表的な展示「BABY VOICE」では、来場者の声がすべて泣き声に変換され、言葉を持たない赤ちゃんが泣くことでしかコミュニケーションできない世界を体感できる。「4mの大人たち」では、VRを通じて大人が4メートルの巨人として目の前に立ちはだかる体験により、こどもから見た大人の威圧感をリアルに再現。他にも、21kgの赤ちゃんの頭の重さを体験する「ベイビーヘッド」、2倍サイズの家具で2歳児の朝食を追体験する「にさいのあさごはん」など、テクノロジーと空間デザインで「こどもの世界」を体感できる展示を制作した。",
+  "thumbnail": "/data/works/kodomo-no-shiten/thumb.png",
+  "images": [
+    "/data/works/kodomo-no-shiten/04.jpg",
+    "/data/works/kodomo-no-shiten/05.jpg",
+    "/data/works/kodomo-no-shiten/06.jpg"
+  ],
+  "tags": ["展覧会", "VR", "体験型"],
+  "techStack": ["音声変換", "VR", "空間デザイン", "センサー"],
+  "links": [
+    { "label": "ITOCHU SDGs STUDIO", "url": "https://www.itochu.co.jp/ja/corporatebranding/sdgs/20220715.html" }
+  ],
+  "year": 2022,
+  "date": "2022-07-22",
+  "featured": true
+}

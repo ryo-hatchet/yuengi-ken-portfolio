@@ -1,0 +1,17 @@
+{
+  "slug": "phantom-snack",
+  "title": "PhantomSnack",
+  "description": "顔認識と骨伝導技術を組み合わせ、実際には何も食べずにスナック菓子の食感・味・香りを楽しめる「罪悪感ゼロの咀嚼体験」。顎の動きを画像認識で検出し、骨伝導イヤホンから咀嚼音と振動を同期再生。映像と香りディフューザーも連動させた多感覚体験デバイス。SXSW 2023で展示。",
+  "thumbnail": "/data/inventions/phantom-snack/thumb.jpg",
+  "images": [
+    "/data/inventions/phantom-snack/01.jpg",
+    "/data/inventions/phantom-snack/02.jpg",
+    "/data/inventions/phantom-snack/03.jpg"
+  ],
+  "tags": ["VR", "骨伝導", "食体験", "SXSW"],
+  "techStack": ["顔画像認識", "骨伝導イヤホン", "機械学習", "アロマディフューザー"],
+  "links": [{"label": "PhantomSnack公式", "url": "https://phantomsnack.com/jp"}, {"label": "電通報", "url": "https://dentsu-ho.com/articles/8546"}],
+  "status": "完了",
+  "year": 2023,
+  "date": "2023-03-01"
+}

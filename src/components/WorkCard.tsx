@@ -12,16 +12,23 @@ export default function WorkCard({ work }: WorkCardProps) {
       <article className="bg-bg-card overflow-hidden border border-metallic/30 hover:border-accent/30 transition-all duration-500 hover:shadow-xl">
         {/* Thumbnail */}
         <div className="aspect-[4/3] bg-gradient-to-br from-bg-main to-metallic/20 relative overflow-hidden">
-          <Image
-            src={work.thumbnail}
-            alt={work.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
-          />
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <span className="text-6xl text-metallic/30 font-black">遊</span>
-          </div>
+          {work.thumbnail ? (
+            <Image
+              src={work.thumbnail}
+              alt={work.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          ) : (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+              <div className="w-8 h-[1px] bg-metallic-dark/30" />
+              <span className="text-[10px] font-mono tracking-[0.3em] text-text-sub/60 uppercase">
+                Image Incoming
+              </span>
+              <div className="w-8 h-[1px] bg-metallic-dark/30" />
+            </div>
+          )}
           {/* Hover overlay */}
           <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-500" />
         </div>

@@ -1,0 +1,22 @@
+{
+  "slug": "daiwa-120th-next-journey",
+  "title": "大和証券120th THE NEXT JOURNEY",
+  "tagline": "月面メタバースで、全社員と家族が120周年を祝う",
+  "description": "大和証券グループ創業120周年を記念したメタバースイベント。全社員とその家族、OB・OGが月面の仮想空間上で交流できる体験を制作。メタバース空間内には歴史ギャラリー、社員の交流スペース、トリビアコンテスト、お笑いライブなど多彩なコンテンツを実装。リアルでは実現困難な「月の上で全員が集まる」という非日常体験を、テクノロジーの力で実現した。",
+  "thumbnail": "/data/works/daiwa-120th-next-journey/thumb.jpg",
+  "images": [
+    "/data/works/daiwa-120th-next-journey/01.png",
+    "/data/works/daiwa-120th-next-journey/02.jpg",
+    "/data/works/daiwa-120th-next-journey/03.jpg",
+    "/data/works/daiwa-120th-next-journey/04.jpg",
+    "/data/works/daiwa-120th-next-journey/05.jpg"
+  ],
+  "tags": ["メタバース", "周年イベント", "バーチャル空間"],
+  "techStack": ["メタバース", "3DCG", "バーチャル空間設計", "ライブ配信"],
+  "links": [
+    { "label": "Puzzle Inc.", "url": "https://puzzle-inc.jp/work/17-014/" }
+  ],
+  "year": 2022,
+  "date": "2022-09-01",
+  "featured": true
+}

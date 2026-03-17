@@ -24,7 +24,9 @@ function readJsonFilesFromDir<T>(dir: string, filename: string): T[] {
 // --- Works ---
 
 export function getWorks(): Work[] {
-  return readJsonFilesFromDir<Work>("works", "work.json");
+  return readJsonFilesFromDir<Work>("works", "work.json").sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 }
 
 export function getFeaturedWorks(): Work[] {
@@ -38,7 +40,9 @@ export function getWorkBySlug(slug: string): Work | undefined {
 // --- Inventions ---
 
 export function getInventions(): Invention[] {
-  return readJsonFilesFromDir<Invention>("inventions", "invention.json");
+  return readJsonFilesFromDir<Invention>("inventions", "invention.json").sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 }
 
 export function getInventionBySlug(slug: string): Invention | undefined {

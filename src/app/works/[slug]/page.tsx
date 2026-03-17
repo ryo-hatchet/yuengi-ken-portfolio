@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { getWorks, getWorkBySlug } from "@/lib/data";
+import ImageLightbox from "@/components/ImageLightbox";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -90,19 +91,7 @@ export default async function WorkDetailPage({ params }: Props) {
             <h2 className="text-lg font-bold text-text-heading mb-3">
               ギャラリー
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {work.images.map((img, i) => (
-                <div key={img} className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image
-                    src={img}
-                    alt={`${work.title} - ${i + 1}`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 448px"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            <ImageLightbox images={work.images} alt={work.title} />
           </div>
         )}
 
@@ -154,8 +143,18 @@ export default async function WorkDetailPage({ params }: Props) {
             <h2 className="text-lg font-bold text-text-heading mb-3">
               動画
             </h2>
-            <div className="bg-text-sub/10 h-64 rounded-lg flex items-center justify-center">
-              <span className="text-text-sub">動画プレースホルダー</span>
+            <div className="space-y-4">
+              {(Array.isArray(work.video) ? work.video : [work.video]).map((url, i) => (
+                <div key={i} className="relative w-full aspect-video rounded-lg overflow-hidden">
+                  <iframe
+                    src={url.replace("youtu.be/", "www.youtube.com/embed/").replace("watch?v=", "embed/")}
+                    title={`${work.title} - 動画${i + 1}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         )}

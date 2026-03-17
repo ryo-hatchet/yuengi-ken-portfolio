@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { getInventions, getInventionBySlug } from "@/lib/data";
+import ImageLightbox from "@/components/ImageLightbox";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -103,19 +104,7 @@ export default async function InventionDetailPage({ params }: Props) {
             <h2 className="text-lg font-bold text-text-heading mb-3">
               ギャラリー
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {invention.images.map((img, i) => (
-                <div key={img} className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image
-                    src={img}
-                    alt={`${invention.title} - ${i + 1}`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 448px"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            <ImageLightbox images={invention.images} alt={invention.title} />
           </div>
         )}
 

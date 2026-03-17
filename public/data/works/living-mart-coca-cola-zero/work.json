@@ -1,0 +1,16 @@
+{
+  "slug": "living-mart-coca-cola-zero",
+  "title": "LIVING MART by Coca-Cola ZERO",
+  "tagline": "コカ・コーラが動き、語りかける――CMの世界が現実になる店舗",
+  "description": "コカ・コーラ ゼロのCM世界観を再現した期間限定の体験型店舗。原宿に出現した「生きているコンビニ」では、商品が動き、語りかけ、来店者とインタラクションする仕掛けが満載。センサーやメカトロニクスを駆使し、棚の商品が自律的に動いたり、来店者の行動に反応して店舗全体が変化する空間を実現した。CMの中だけの架空の世界を、テクノロジーの力でリアルな体験に変換するプロジェクト。",
+  "thumbnail": "/data/works/living-mart-coca-cola-zero/thumb.jpg",
+  "images": [],
+  "tags": ["インスタレーション", "体験型店舗", "メカトロニクス"],
+  "techStack": ["センサー", "メカトロニクス", "インタラクティブ制御", "空間演出"],
+  "links": [
+    { "label": "CNET Japan", "url": "https://japan.cnet.com/article/35214877/" }
+  ],
+  "year": 2024,
+  "date": "2024-02-06",
+  "featured": true
+}

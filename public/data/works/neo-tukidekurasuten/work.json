@@ -1,21 +1,42 @@
 {
   "slug": "neo-tukidekurasuten",
-  "title": "NEO月でくらす展",
-  "tagline": "光が呼吸する空間で、あなたの存在が波紋になる",
-  "description": "来場者の動きに反応して光と音が変化するインタラクティブライトインスタレーション。数百本のLEDチューブが空間を埋め尽くし、人の存在と動作をセンサーで検知して、光の波紋が広がる幻想的な体験を生み出す。2024年の東京デザインウィークで初公開され、1万人以上の来場者を魅了した。",
-  "thumbnail": "/data/works/neo-tukidekurasuten/thumb.jpg",
+  "title": "NEO 月でくらす展",
+  "tagline": "2040年、月で暮らす未来を体験する",
+  "description": "日本科学未来館で開催された、2040年の月面生活を体験できる特別展。来場者は「月面レポーター」「月ワーカー」「月サイエンティスト」の3つの役割を選び、月面基地ゾーンと月面フィールドゾーンを巡る。月の重力体験、レゴリスからの水資源採取ミッション、隕石回収の遠隔操作ゲーム、月面ローバーでの撮影ミッションなど、科学的知見に基づいたインタラクティブな展示を多数制作。月面食堂や宇宙コンビニなどの生活空間も再現し、「月で暮らす」リアリティを五感で体感できる空間を実現した。",
+  "thumbnail": "/data/works/neo-tukidekurasuten/thumb.png",
   "images": [
     "/data/works/neo-tukidekurasuten/01.jpg",
     "/data/works/neo-tukidekurasuten/02.jpg",
-    "/data/works/neo-tukidekurasuten/03.jpg"
+    "/data/works/neo-tukidekurasuten/03.jpg",
+    "/data/works/neo-tukidekurasuten/04.jpg",
+    "/data/works/neo-tukidekurasuten/05.jpg",
+    "/data/works/neo-tukidekurasuten/06.jpg",
+    "/data/works/neo-tukidekurasuten/07.jpg",
+    "/data/works/neo-tukidekurasuten/08.jpg",
+    "/data/works/neo-tukidekurasuten/09.jpg",
+    "/data/works/neo-tukidekurasuten/10.jpg",
+    "/data/works/neo-tukidekurasuten/11.jpg",
+    "/data/works/neo-tukidekurasuten/12.jpg",
+    "/data/works/neo-tukidekurasuten/13.jpg",
+    "/data/works/neo-tukidekurasuten/14.jpg",
+    "/data/works/neo-tukidekurasuten/15.jpg",
+    "/data/works/neo-tukidekurasuten/16.jpg",
+    "/data/works/neo-tukidekurasuten/17.jpg",
+    "/data/works/neo-tukidekurasuten/18.jpg",
+    "/data/works/neo-tukidekurasuten/19.jpg",
+    "/data/works/neo-tukidekurasuten/20.jpg",
+    "/data/works/neo-tukidekurasuten/21.jpg"
   ],
-  "video": "https://www.youtube.com/watch?v=example1",
-  "tags": ["インスタレーション", "インタラクティブ", "光"],
-  "techStack": ["Arduino", "TouchDesigner", "DMX", "LiDAR"],
+  "video": [
+    "https://youtu.be/FUYn_rBYC4I",
+    "https://youtu.be/FP-sjgxg7m0"
+  ],
+  "tags": ["展覧会", "体験型", "宇宙"],
+  "techStack": ["インタラクティブ展示", "重力シミュレーション", "遠隔操作", "空間デザイン"],
   "links": [
-    { "label": "イベントレポート", "url": "https://example.com/hikari-report" }
+    { "label": "日本科学未来館", "url": "https://www.miraikan.jst.go.jp/exhibitions/spexhibition/moon.html" }
   ],
-  "year": 2024,
-  "date": "2024-10-15",
+  "year": 2023,
+  "date": "2023-04-28",
   "featured": true
 }

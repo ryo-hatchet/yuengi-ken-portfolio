@@ -53,8 +53,12 @@ export default function PackageCard({ work }: PackageCardProps) {
                   className="object-cover"
                 />
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl text-metallic/40 font-black">遊</span>
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
+                  <div className="w-6 h-[1px] bg-metallic-dark/30" />
+                  <span className="text-[8px] font-mono tracking-[0.25em] text-text-sub/60 uppercase">
+                    Image Incoming
+                  </span>
+                  <div className="w-6 h-[1px] bg-metallic-dark/30" />
                 </div>
               )}
             </div>

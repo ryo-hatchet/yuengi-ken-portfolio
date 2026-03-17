@@ -1,0 +1,17 @@
+{
+  "slug": "yume-wo-miru-robot",
+  "title": "夢を見るロボット",
+  "description": "ロボットの非稼働時間を「眠り」と捉え直し、眠っている間に夢を見て自然な不随意運動を生み出すことで、人間がロボットの背景体験を間接的に理解し、共生関係を構築するインスタレーション。従来の「かわいいデザイン」に頼らない、新しいロボットとの共感的コミュニケーションの形を探求する研究プロジェクト。",
+  "thumbnail": "/data/inventions/yume-wo-miru-robot/thumb.png",
+  "images": [
+    "/data/inventions/yume-wo-miru-robot/01.png",
+    "/data/inventions/yume-wo-miru-robot/02.png",
+    "/data/inventions/yume-wo-miru-robot/03.gif"
+  ],
+  "tags": ["ロボティクス", "インスタレーション", "研究"],
+  "techStack": ["ロボティクス", "アニメーション", "行動設計"],
+  "links": [{"label": "dentsu lab tokyo", "url": "https://dentsulab.tokyo/works/a-study-on-how-robots-sleep/"}],
+  "status": "完了",
+  "year": 2025,
+  "date": "2025-12-01"
+}

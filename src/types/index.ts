@@ -5,7 +5,7 @@ export type Work = {
   description: string;
   thumbnail: string;
   images: string[];
-  video?: string;
+  video?: string | string[];
   tags: string[];
   techStack: string[];
   links: { label: string; url: string }[];
@@ -22,6 +22,7 @@ export type Invention = {
   images: string[];
   tags: string[];
   techStack: string[];
+  links?: { label: string; url: string }[];
   status: "進行中" | "完了" | "構想";
   year: number;
   date: string;
