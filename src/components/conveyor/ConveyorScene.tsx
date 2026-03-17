@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { Environment } from "@react-three/drei";
 import ConveyorBelt from "./ConveyorBelt";
 import PackageBox from "./PackageBox";
+import CameraAnimation from "./CameraAnimation";
 import { useConveyorAnimation } from "./useConveyorAnimation";
 
 type WorkData = {
@@ -20,7 +21,7 @@ type ConveyorSceneProps = {
 export default function ConveyorScene({ works }: ConveyorSceneProps) {
   const { setRef, getInitialX, hoveredIndex } = useConveyorAnimation({
     count: works.length,
-    speed: 0.6,
+    speed: 0.25,
     spacing: 3.5,
   });
 
@@ -59,6 +60,9 @@ export default function ConveyorScene({ works }: ConveyorSceneProps) {
       <Suspense fallback={null}>
         <Environment preset="city" environmentIntensity={0.3} />
       </Suspense>
+
+      {/* Camera Animation */}
+      <CameraAnimation />
 
       {/* Conveyor Belt */}
       <ConveyorBelt />

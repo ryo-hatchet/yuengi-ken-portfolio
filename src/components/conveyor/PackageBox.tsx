@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef, useState, useMemo } from "react";
-import { useFrame, useLoader } from "@react-three/fiber";
-import { Html, RoundedBox } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { Html } from "@react-three/drei";
 import { useRouter } from "next/navigation";
 import * as THREE from "three";
 
@@ -70,41 +70,36 @@ function BoxContent({
     router.push(`/works/${slug}`);
   };
 
-  // Materials for each face
+  // Materials for all 6 faces - image on 4 sides
   const materials = useMemo(() => {
-    const cardboard = new THREE.MeshStandardMaterial({
-      color: "#FAF8F6",
-      roughness: 0.6,
-      metalness: 0.05,
-    });
-    const cardboardSide = new THREE.MeshStandardMaterial({
-      color: "#F0EDEA",
-      roughness: 0.65,
-      metalness: 0.05,
-    });
-    const cardboardTop = new THREE.MeshStandardMaterial({
+    const topMat = new THREE.MeshStandardMaterial({
       color: "#FFFFFF",
       roughness: 0.55,
       metalness: 0.05,
     });
+    const bottomMat = new THREE.MeshStandardMaterial({
+      color: "#E8E4E0",
+      roughness: 0.7,
+      metalness: 0.05,
+    });
 
-    const frontMat = texture
-      ? new THREE.MeshStandardMaterial({
-          map: texture,
-          roughness: 0.5,
-          metalness: 0.05,
-        })
-      : cardboard;
+    if (texture) {
+      const imgMat = new THREE.MeshStandardMaterial({
+        map: texture,
+        roughness: 0.45,
+        metalness: 0.05,
+      });
+      // Order: +x (right), -x (left), +y (top), -y (bottom), +z (front), -z (back)
+      return [imgMat, imgMat, topMat, bottomMat, imgMat, imgMat];
+    }
 
-    // Order: +x, -x, +y, -y, +z (front), -z (back)
-    return [
-      cardboardSide, // right
-      cardboardSide, // left
-      cardboardTop, // top
-      cardboard, // bottom
-      frontMat, // front
-      cardboard, // back
-    ];
+    // No image fallback
+    const fallback = new THREE.MeshStandardMaterial({
+      color: "#FAF8F6",
+      roughness: 0.6,
+      metalness: 0.05,
+    });
+    return [fallback, fallback, topMat, bottomMat, fallback, fallback];
   }, [texture]);
 
   return (
@@ -127,8 +122,10 @@ function BoxContent({
           args={[new THREE.BoxGeometry(BOX_WIDTH, BOX_HEIGHT, BOX_DEPTH)]}
         />
         <lineBasicMaterial
-          color={hovered ? "#FF5722" : "#C8C2BA"}
+          color={hovered ? "#FF5722" : "#D0CAC4"}
           linewidth={1}
+          transparent
+          opacity={hovered ? 1 : 0.4}
         />
       </lineSegments>
 
@@ -158,9 +155,15 @@ function BoxContent({
         </Html>
       )}
 
-      {/* Accent stripe on box */}
-      <mesh position={[0, 0.85, BOX_DEPTH / 2 + 0.001]}>
-        <planeGeometry args={[BOX_WIDTH, 0.06]} />
+      {/* Accent stripe on front face */}
+      <mesh position={[0, 0.85, BOX_DEPTH / 2 + 0.002]}>
+        <planeGeometry args={[BOX_WIDTH, 0.04]} />
+        <meshBasicMaterial color="#FF5722" />
+      </mesh>
+
+      {/* Accent stripe on right face */}
+      <mesh position={[BOX_WIDTH / 2 + 0.002, 0.85, 0]} rotation={[0, Math.PI / 2, 0]}>
+        <planeGeometry args={[BOX_DEPTH, 0.04]} />
         <meshBasicMaterial color="#FF5722" />
       </mesh>
     </group>
