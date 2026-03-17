@@ -1,6 +1,15 @@
+import { getWorks } from "@/lib/data";
 import BeltConveyor from "@/components/BeltConveyor";
 
 export default function HeroSection() {
+  const works = getWorks();
+  const worksData = works.map((w) => ({
+    slug: w.slug,
+    title: w.title,
+    thumbnail: w.thumbnail,
+    tags: w.tags,
+  }));
+
   return (
     <section className="relative min-h-[calc(100vh-8.75rem)] w-full overflow-hidden bg-bg-main flex flex-col">
       {/* Background giant text */}
@@ -12,7 +21,7 @@ export default function HeroSection() {
 
       {/* Belt conveyor - layered on top of background text */}
       <div className="relative z-10 flex-1 flex items-center">
-        <BeltConveyor embedded />
+        <BeltConveyor works={worksData} embedded />
       </div>
 
       {/* Bottom bar */}
