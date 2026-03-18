@@ -26,6 +26,7 @@
   --color-metallic-dark: var(--color-metallic-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-dot: var(--font-dot-gothic);
   --animate-scroll: scroll 40s linear infinite;
 }
 
