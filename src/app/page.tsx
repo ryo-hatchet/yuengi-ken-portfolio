@@ -1,8 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
-import WorksSection from "@/components/sections/WorksSection";
-import InventionsSection from "@/components/sections/InventionsSection";
-import ResearchSection from "@/components/sections/ResearchSection";
 import { getWorks, getInventions } from "@/lib/data";
 
 export default function Home() {
@@ -23,9 +20,6 @@ export default function Home() {
     <main>
       <HeroSection showcaseItems={showcaseItems} />
       <AboutSection />
-      <WorksSection />
-      <InventionsSection />
-      <ResearchSection />
     </main>
   );
 }
