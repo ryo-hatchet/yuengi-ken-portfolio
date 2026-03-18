@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, DotGothic16 } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const geistSans = Geist({
@@ -11,6 +10,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const dotGothic = DotGothic16({
+  weight: "400",
+  variable: "--font-dot-gothic",
   subsets: ["latin"],
 });
 
@@ -34,10 +39,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${dotGothic.variable} antialiased`}
       >
-        <Navbar />
-        <main className="pt-[7.5rem] sm:pt-[8.5rem] md:pt-[8.75rem]">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
