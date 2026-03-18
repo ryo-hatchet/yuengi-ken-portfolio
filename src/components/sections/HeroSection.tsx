@@ -47,7 +47,13 @@ function LedTicker() {
         ref={contentRef}
         className="whitespace-nowrap will-change-transform font-dot"
       >
-        <span className="text-base sm:text-lg md:text-xl tracking-[0.2em] text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.7)]">
+        <span
+          className="text-lg sm:text-xl md:text-2xl tracking-[0.2em] text-amber-400"
+          style={{
+            WebkitTextStroke: "0.5px rgba(251,191,36,0.9)",
+            textShadow: "0 0 8px rgba(251,191,36,0.7), 0 0 20px rgba(251,191,36,0.3), 0 0 40px rgba(251,191,36,0.15)",
+          }}
+        >
           {messages.join("　　　")}
         </span>
       </div>
@@ -98,21 +104,21 @@ export default function HeroSection() {
         </div>
 
         {/* Row 3: LED Ticker strip - 電光掲示板 */}
-        <div className="border-t border-b-2 border-text-heading bg-[#0a0a0a] h-10 sm:h-12 relative overflow-hidden">
+        <div className="border-t border-b-2 border-text-heading bg-[#050505] h-12 sm:h-14 relative overflow-hidden">
           {/* Scanline effect */}
           <div
-            className="absolute inset-0 pointer-events-none opacity-10 z-10"
+            className="absolute inset-0 pointer-events-none opacity-15 z-10"
             style={{
               backgroundImage:
-                "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px)",
+                "repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.5) 1px, rgba(0,0,0,0.5) 3px)",
             }}
           />
-          {/* Dot matrix background */}
+          {/* Dot matrix background - more visible */}
           <div
-            className="absolute inset-0 pointer-events-none opacity-[0.04]"
+            className="absolute inset-0 pointer-events-none opacity-[0.08]"
             style={{
               backgroundImage:
-                "radial-gradient(circle, #fbbf24 0.5px, transparent 0.5px)",
+                "radial-gradient(circle, #fbbf24 0.8px, transparent 0.8px)",
               backgroundSize: "6px 6px",
             }}
           />
