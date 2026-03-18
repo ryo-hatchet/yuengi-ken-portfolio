@@ -60,47 +60,7 @@ export default function HeroSection() {
     <section className="relative w-full bg-bg-main overflow-hidden">
       {/* === GRID LAYOUT === */}
       <div className="w-full border-b-2 border-text-heading">
-        {/* Row 1: Logo + Nav cells */}
-        <div className="grid grid-cols-12 border-b border-text-heading/20 bg-text-heading">
-          <div className="col-span-4 sm:col-span-3 border-r border-white/10 px-4 py-3 flex items-center gap-3">
-            <a href="/" className="flex items-baseline gap-2">
-              <span className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                遊宴技研
-              </span>
-              <span className="hidden sm:inline text-[9px] font-mono tracking-[0.15em] text-white/40 uppercase">
-                YUENGI-KEN
-              </span>
-            </a>
-          </div>
-          <a href="/works" className="col-span-1 sm:col-span-1 border-r border-white/10 px-2 sm:px-3 py-3 flex items-center hover:bg-white/5 transition-colors">
-            <span className="text-[9px] sm:text-[10px] font-mono tracking-wider text-white/60 hover:text-white uppercase">
-              Works
-            </span>
-          </a>
-          <a href="/inventions" className="col-span-2 sm:col-span-2 border-r border-white/10 px-2 sm:px-3 py-3 flex items-center hover:bg-white/5 transition-colors">
-            <span className="text-[9px] sm:text-[10px] font-mono tracking-wider text-white/60 hover:text-white uppercase">
-              Inventions
-            </span>
-          </a>
-          <a href="/research" className="col-span-2 sm:col-span-2 border-r border-white/10 px-2 sm:px-3 py-3 flex items-center hover:bg-white/5 transition-colors">
-            <span className="text-[9px] sm:text-[10px] font-mono tracking-wider text-white/60 hover:text-white uppercase">
-              Research
-            </span>
-          </a>
-          <a href="/about" className="col-span-1 sm:col-span-1 border-r border-white/10 px-2 sm:px-3 py-3 flex items-center hover:bg-white/5 transition-colors">
-            <span className="text-[9px] sm:text-[10px] font-mono tracking-wider text-white/60 hover:text-white uppercase">
-              About
-            </span>
-          </a>
-          <div className="col-span-2 sm:col-span-3 px-3 py-3 flex items-center justify-end gap-3">
-            <span className="hidden sm:inline text-[9px] font-mono tracking-wider text-white/30">
-              est. 2024
-            </span>
-            <div className="w-2.5 h-2.5 bg-accent rounded-full" />
-          </div>
-        </div>
-
-        {/* Row 2: Main giant text area */}
+        {/* Row 1: Main giant text area */}
         <div className="grid grid-cols-12">
           {/* Left: tag block */}
           <div className="col-span-3 sm:col-span-2 border-r border-text-heading/20 flex flex-col justify-between p-3 sm:p-4">
@@ -118,31 +78,19 @@ export default function HeroSection() {
 
           {/* Center: GIANT 遊宴技研 */}
           <div className="col-span-9 sm:col-span-10 relative">
-            <div className="px-3 sm:px-6 py-4 sm:py-6">
-              <div className="flex flex-wrap items-baseline leading-[0.9]">
-                <span className="text-[22vw] sm:text-[18vw] md:text-[16vw] font-black text-text-heading tracking-[-0.05em] leading-[0.88]">
+            <div className="px-4 sm:px-8 py-6 sm:py-10">
+              <div className="flex flex-wrap items-baseline leading-[1]">
+                <span className="text-[20vw] sm:text-[17vw] md:text-[15vw] font-black text-text-heading tracking-[0.08em] leading-[1]">
                   遊宴
                 </span>
               </div>
-              <div className="flex items-baseline leading-[0.9] -mt-2 sm:-mt-4">
-                <span className="text-[22vw] sm:text-[18vw] md:text-[16vw] font-black text-text-heading tracking-[-0.05em] leading-[0.88]">
+              <div className="flex items-baseline leading-[1] mt-1 sm:mt-2">
+                <span className="text-[20vw] sm:text-[17vw] md:text-[15vw] font-black text-text-heading tracking-[0.08em] leading-[1]">
                   技研
                 </span>
                 {/* Arrow accent */}
-                <span className="text-accent text-3xl sm:text-5xl md:text-6xl font-black ml-2 sm:ml-4 self-start mt-2">
+                <span className="text-accent text-3xl sm:text-5xl md:text-6xl font-black ml-3 sm:ml-6 self-start mt-2">
                   ←
-                </span>
-              </div>
-            </div>
-
-            {/* Overlapping accent label */}
-            <div className="absolute top-3 right-3 sm:top-5 sm:right-6">
-              <div className="bg-text-heading text-white px-3 py-2 sm:px-4 sm:py-3">
-                <span className="text-[10px] sm:text-xs font-mono tracking-[0.15em] uppercase block">
-                  SELECTED
-                </span>
-                <span className="text-[10px] sm:text-xs font-mono tracking-[0.15em] uppercase block">
-                  WORKS
                 </span>
               </div>
             </div>
